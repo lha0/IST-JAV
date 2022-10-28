@@ -45,7 +45,6 @@ public class Enemy {
 
     public void showStat_enemy() {
         System.out.println("--------------------");
-        System.out.println("Hp : " + getHp());
         System.out.println("Attack : " + getAtk());
         System.out.println("Defence : " + getDef());
         System.out.println("Speed : " + getSpd());

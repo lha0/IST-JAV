@@ -2,7 +2,10 @@ import java.util.Scanner;
 //import Exception.IllegalNumException;
 //import Exception.ZeroException;
 
+
 public class PlayGame {
+    static boolean gameOn = true;
+
     static Scanner kbd = new Scanner(System.in);
     public static myCharacter chooseCharacter() {
         int pick = 0;
@@ -26,6 +29,33 @@ public class PlayGame {
         return ch;
     }
 
+    public static void levelUp(myCharacter ch) {
+        int Atk_ch = ch.getAtk();
+        int Def_ch = ch.getDef();
+        int Spd_ch = ch.getSpd();
+
+        if ((Atk_ch >= 40) && (Def_ch >= 40) && (Spd_ch >= 40) && ch.getLevel() == 2) {
+            ch.setLevel(3);
+            System.out.println("Your character is on the final level");
+            System.out.println("Congratulation");
+            endGame(ch);
+        } else if (Atk_ch >= 20 && Def_ch >= 20  && Spd_ch >= 20 && ch.getLevel() == 1) {
+            ch.setLevel(2);
+            System.out.println("Your character is on the 2nd level");
+            System.out.println("Congratulation");
+        }
+    }
+
+    public static void endGame(myCharacter ch) {
+        if (ch.getHp() <= 0) {
+            System.out.println("Your character is dead because your character HP is 0.");
+            System.out.println("Game over");
+        }
+        
+        gameOn = false;
+    }
+
+
     public static void showTraining(myCharacter ch){
         System.out.println(" ================================================");
         System.out.println("|   1." + ch.getTech1()+"   |   2."+ch.getTech2()+"   |   3."+ch.getTech3()+"   |");
@@ -46,6 +76,8 @@ public class PlayGame {
         else{
             System.out.printf("\"%d\" is Invalid technique number !\n", tech);
         }
+
+        levelUp(ch);
     }
 
     public static void Item(myCharacter ch) {
@@ -97,10 +129,16 @@ public class PlayGame {
         } else if (total_stat_ch < total_stat_enemy) {
             System.out.println("로켓단이 승리했다!");
             ch.setHp(HP - enemy.getAtk());
+            HP = ch.getHp();
+            if (HP <= 0) {
+                endGame(ch);
+            }
             if(Euro >= 30000000) ch.setEur(Euro - 30000000);
             else ch.setEur(0);
             System.out.println("지우는 눈앞이 깜깜해졌다….");
         }
+        //같을 때 어떻게 할지
+
 
         enemy.setAtk(enemy.getAtk() + 3);
         enemy.setDef(enemy.getDef() + 3);
@@ -120,7 +158,7 @@ public class PlayGame {
         switch(pick) {
             case 1: Fight(ch, enemy);
                 break;
-            case 2: Run(ch);
+            case 2: Run(ch, enemy);
                 break;
             default: System.out.println("Wrong number! Please enter again with the number from 1 to 2.");
         }
@@ -128,13 +166,14 @@ public class PlayGame {
         return enemy;
     }
 
-    public static void Run(myCharacter ch){
+    public static void Run(myCharacter ch, Enemy enemy){
         // ch.showStat();
         int RunCnt = ch.getRA();
         // System.out.println(RunCnt);
         if(RunCnt == 0){
             System.out.println("\nOOPS!! You do NOT have any RUN CARD ! :(");
-            //Fight();
+            System.out.println("You have to fight!");
+            Fight(ch, enemy);
         }
         else if(RunCnt > 0){
             ch.setRA(--RunCnt);
@@ -147,7 +186,6 @@ public class PlayGame {
     public static void manual(myCharacter ch, Enemy enemy) {
         int pick = 0;
         int cnt = 0;
-        boolean gameOn = true;
 
         while(gameOn) {
             cnt++;
