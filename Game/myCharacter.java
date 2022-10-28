@@ -1,4 +1,4 @@
-public abstract class myCharacter {
+public abstract class myCharacter implements Training {
     private int Hp;
     private int Atk;
     private int Def;
@@ -12,6 +12,7 @@ public abstract class myCharacter {
     public void setHp(int Hp) {
         this.Hp = Hp;
     }
+
 
     public int getAtk() {
         return Atk;
@@ -44,6 +45,7 @@ public abstract class myCharacter {
     public void setEur(int Eur) {
         this.Eur = Eur;
     }
+    
 
     public void showStat() {
         System.out.println("--------------------");

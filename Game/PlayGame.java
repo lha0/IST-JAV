@@ -27,6 +27,28 @@ public class PlayGame {
 
     }
 
+    public static void showTraining(myCharacter ch){
+        System.out.println(" ================================================");
+        System.out.println("|   1. Tech 1   |   2. Tech 2   |   3. Tech 3   |");
+        System.out.println(" ================================================");
+        
+        int tech;
+        tech = kbd.nextInt();
+
+        if(tech == 1){
+            ch.Attack();
+        }
+        else if(tech == 2){
+            ch.Defence();
+        }
+        else if(tech == 3){
+            ch.Speed();
+        }
+        else{
+            System.out.printf("\"%d\" is Invalid technique number !\n", tech);
+        }
+    }
+
     public static void manual(myCharacter ch) {
         int pick = 0;
         boolean gameOn = true;
@@ -36,7 +58,7 @@ public class PlayGame {
             pick = kbd.nextInt();
 
             switch(pick) {
-                case 1: System.out.println("test");//fight();
+                case 1: showTraining(ch);
                     break;
                 case 2: ch.showStat();
                     break;
