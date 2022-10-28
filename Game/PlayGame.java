@@ -84,9 +84,22 @@ public class PlayGame {
     }
 
     public static void enemyShow(myCharacter ch) {
+        int pick = 0;
         System.out.println("두두등장");
         Enemy enemy = new Enemy(100, 10, 8, 7);
         enemy.showStat_enemy();
+
+        System.out.println("\nDo you want to Fight or Run?");
+        System.out.println("1. Fight\t2. Run");
+        pick = kbd.nextInt();
+
+        switch(pick) {
+            case 1: System.out.println("test");//Fight();
+                break;
+            case 2: System.out.println("test");//Run();
+                break;
+            default: System.out.println("Wrong number! Please enter again with the number from 1 to 2.");
+        }
     }
         
 
