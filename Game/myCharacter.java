@@ -17,6 +17,7 @@ public abstract class myCharacter implements Training {
         this.Hp = Hp;
     }
 
+
     public int getAtk() {
         return Atk;
     }
@@ -48,9 +49,10 @@ public abstract class myCharacter implements Training {
     public void setEur(int Eur) {
         this.Eur = Eur;
     }
+    
 
     public int getRA() {
-        return Eur;
+        return Ra;
     }
 
     public void setRA(int Ra) {
