@@ -19,7 +19,8 @@ public class PlayGame {
                 break;
             case 3: ch = new Charmander(100, 14, 8, 8, 0);
                 break;
-            default: System.out.println("Wrong number! Please enter again with the number from 1 to 3.");
+         
+                default: System.out.println("Wrong number! Please enter again with the number from 1 to 3.");
         }
 
         return ch;
