@@ -4,6 +4,7 @@ public abstract class myCharacter implements Training {
     int Def;
     int Spd;
     int Eur;
+    private int Ra;
     private String Tech1;
     private String Tech2;
     private String Tech3;
@@ -72,6 +73,14 @@ public abstract class myCharacter implements Training {
 
     public void setTech3(String Tech3) {
         this.Tech3 = Tech3;
+    }
+
+    public int getRA() {
+        return Eur;
+    }
+
+    public void setRA(int Ra) {
+        this.Ra = Ra;
     }
     
 

@@ -48,27 +48,43 @@ public class PlayGame {
         }
     }
 
-    public static void showTraining(myCharacter ch){
-        System.out.println(" ================================================");
-        System.out.println("|   1. Tech 1   |   2. Tech 2   |   3. Tech 3   |");
-        System.out.println(" ================================================");
-        
-        int tech;
-        tech = kbd.nextInt();
+    public static void Item(myCharacter ch){
+        int pick = 0;
+        System.out.println("1. Hp potion(50,000,000 euro)\t2. Run Card(100,000,000 euro)");
+        pick = kbd.nextInt();
 
-        if(tech == 1){
-            ch.Attack();
+        if(pick == 1){
+            if(ch.getEur() > 50000000){
+                System.out.println("You bought a health potion!");
+
+                int HP = ch.getHp();
+                ch.setHp(HP+5);
+                
+                int Coin1 = ch.getEur();
+                ch.setEur(Coin1-50000000); 
+                
+                System.out.println("5 HP point had raised!");
+            } else { 
+                System.out.println("You don't have enough money!");
+            }    
+
+        } else {
+            if(ch.getEur() > 100000000){
+                System.out.println("You bought a runaway card!");
+    
+                int RA = ch.getRA();
+                ch.setRA(RA+1);
+                
+                int Coin2 = ch.getEur();
+                ch.setEur(Coin2-100000000);
+            } else { 
+                System.out.println("You don't have enough money!");
+            }
         }
-        else if(tech == 2){
-            ch.Defence();
-        }
-        else if(tech == 3){
-            ch.Speed();
-        }
-        else{
-            System.out.printf("\"%d\" is Invalid technique number !\n", tech);
-        }
-    }
+            
+            }
+        
+    
 
     public static void manual(myCharacter ch) {
         int pick = 0;
@@ -79,11 +95,11 @@ public class PlayGame {
             pick = kbd.nextInt();
 
             switch(pick) {
-                case 1: showTraining(ch);
+                case 1: System.out.println("test");//fight();
                     break;
                 case 2: ch.showStat();
                     break;
-                case 3: System.out.println("test");// buy_item();
+                case 3: Item(ch);
                     break;
                 case 4: System.out.println("test"); //showStat_enemy();
                     break;
@@ -93,6 +109,8 @@ public class PlayGame {
             }
         }
     }
+
+
 
     public static void main(String[] args) {
         System.out.println("Now start the game . . . !\n");
