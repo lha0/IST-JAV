@@ -1,10 +1,11 @@
 public class Charmander extends myCharacter implements Training {
-    public Charmander (int Hp, int Atk, int Def, int Spd, int Eur) {
+    public Charmander (int Hp, int Atk, int Def, int Spd, int Eur, int Ra) {
         setHp(Hp);
         setAtk(Atk);
         setDef(Def);
         setSpd(Spd);
         setEur(Eur);
+        setRA(Ra);
         setTech1("Scratch");
         setTech2("Growl");
         setTech3("FlameThrower");

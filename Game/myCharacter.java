@@ -52,7 +52,7 @@ public abstract class myCharacter implements Training {
     
 
     public int getRA() {
-        return Eur;
+        return Ra;
     }
 
     public void setRA(int Ra) {

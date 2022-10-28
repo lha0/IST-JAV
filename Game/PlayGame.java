@@ -13,11 +13,11 @@ public class PlayGame {
         pick = kbd.nextInt();
 
         switch(pick) {
-            case 1: ch = new Squirtle(100, 8, 10, 12, 0);
+            case 1: ch = new Squirtle(100, 8, 10, 12, 0, 0);
                 break;
-            case 2: ch = new Bulbasaur(100, 10, 13, 7, 0);
+            case 2: ch = new Bulbasaur(100, 10, 13, 7, 0, 0);
                 break;
-            case 3: ch = new Charmander(100, 14, 8, 8, 0);
+            case 3: ch = new Charmander(100, 14, 8, 8, 0, 0);
                 break;
          
                 default: System.out.println("Wrong number! Please enter again with the number from 1 to 3.");
@@ -84,9 +84,37 @@ public class PlayGame {
     }
 
     public static void enemyShow(myCharacter ch) {
+        int pick = 0;
         System.out.println("두두등장");
         Enemy enemy = new Enemy(100, 10, 8, 7);
         enemy.showStat_enemy();
+
+        System.out.println("\nDo you want to Fight or Run?");
+        System.out.println("1. Fight\t2. Run");
+        pick = kbd.nextInt();
+
+        switch(pick) {
+            case 1: System.out.println("test");//Fight();
+                break;
+            case 2: Run(ch);
+                break;
+            default: System.out.println("Wrong number! Please enter again with the number from 1 to 2.");
+        }
+    }
+
+    public static void Run(myCharacter ch){
+        // ch.showStat();
+        int RunCnt = ch.getRA();
+        // System.out.println(RunCnt);
+        if(RunCnt == 0){
+            System.out.println("\nOOPS!! You do NOT have any RUN CARD ! :(");
+            //Fight();
+        }
+        else if(RunCnt > 0){
+            ch.setRA(--RunCnt);
+            System.out.println("\nLUCKY!! YOU RUN AWAY from enemy by USING \"1\" RUN CARD ! :)");
+            System.out.printf("Your Left RUN CARD : %d\n", RunCnt);
+        }
     }
         
 

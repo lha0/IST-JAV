@@ -1,10 +1,11 @@
 public class Squirtle extends myCharacter implements Training {
-    public Squirtle (int Hp, int Atk, int Def, int Spd, int Eur) {
+    public Squirtle (int Hp, int Atk, int Def, int Spd, int Eur, int Ra) {
         setHp(Hp);
         setAtk(Atk);
         setDef(Def);
         setSpd(Spd);
         setEur(Eur);
+        setRA(Ra);
         setTech1("Tackle");
         setTech2("TailWhip");
         setTech3("WaterGun");

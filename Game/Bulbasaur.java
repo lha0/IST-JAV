@@ -1,10 +1,11 @@
 public class Bulbasaur extends myCharacter implements Training {
-    public Bulbasaur (int Hp, int Atk, int Def, int Spd, int Eur) {
+    public Bulbasaur (int Hp, int Atk, int Def, int Spd, int Eur, int Ra) {
         setHp(Hp);
         setAtk(Atk);
         setDef(Def);
         setSpd(Spd);
         setEur(Eur);
+        setRA(Ra);
         setTech1("LeechSeed");
         setTech2("VineWhip");
         setTech3("Tackle");
