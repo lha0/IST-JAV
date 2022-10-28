@@ -1,9 +1,12 @@
 public abstract class myCharacter implements Training {
-    private int Hp;
-    private int Atk;
-    private int Def;
-    private int Spd;
-    private int Eur;
+    int Hp;
+    int Atk;
+    int Def;
+    int Spd;
+    int Eur;
+    private String Tech1;
+    private String Tech2;
+    private String Tech3;
 
     public int getHp() {
         return Hp;
@@ -47,6 +50,31 @@ public abstract class myCharacter implements Training {
     }
     
 
+    public String getTech1() {
+        return Tech1;
+    }
+
+    public void setTech1(String Tech1) {
+        this.Tech1 = Tech1;
+    }
+
+    public String getTech2() {
+        return Tech2;
+    }
+
+    public void setTech2(String Tech2) {
+        this.Tech2 = Tech2;
+    }
+
+    public String getTech3() {
+        return Tech3;
+    }
+
+    public void setTech3(String Tech3) {
+        this.Tech3 = Tech3;
+    }
+    
+
     public void showStat() {
         System.out.println("--------------------");
         System.out.println("Hp : " + Hp);
@@ -57,3 +85,5 @@ public abstract class myCharacter implements Training {
         System.out.println("--------------------");
     }
 }
+
+

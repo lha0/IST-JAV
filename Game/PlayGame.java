@@ -24,7 +24,28 @@ public class PlayGame {
         }
 
         return ch;
+    }
 
+    public static void showTraining(myCharacter ch){
+        System.out.println(" ================================================");
+        System.out.println("|   1." + ch.getTech1()+"   |   2."+ch.getTech2()+"   |   3."+ch.getTech3()+"   |");
+        System.out.println(" ================================================");
+        
+        int tech;
+        tech = kbd.nextInt();
+
+        if(tech == 1){
+            ch.Attack();
+        }
+        else if(tech == 2){
+            ch.Defence();
+        }
+        else if(tech == 3){
+            ch.Speed();
+        }
+        else{
+            System.out.printf("\"%d\" is Invalid technique number !\n", tech);
+        }
     }
 
     public static void showTraining(myCharacter ch){
