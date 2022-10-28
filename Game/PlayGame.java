@@ -48,13 +48,13 @@ public class PlayGame {
         }
     }
 
-    public static void Item(myCharacter ch){
+    public static void Item(myCharacter ch) {
         int pick = 0;
         System.out.println("1. Hp potion(50,000,000 euro)\t2. Run Card(100,000,000 euro)");
         pick = kbd.nextInt();
 
-        if(pick == 1){
-            if(ch.getEur() > 50000000){
+        if (pick == 1) {
+            if (ch.getEur() > 50000000) {
                 System.out.println("You bought a health potion!");
 
                 int HP = ch.getHp();
@@ -69,7 +69,7 @@ public class PlayGame {
             }    
 
         } else {
-            if(ch.getEur() > 100000000){
+            if (ch.getEur() > 100000000) {
                 System.out.println("You bought a runaway card!");
     
                 int RA = ch.getRA();
@@ -80,32 +80,42 @@ public class PlayGame {
             } else { 
                 System.out.println("You don't have enough money!");
             }
-        }
-            
-            }
+        }        
+    }
+
+    public static void enemyShow(myCharacter ch) {
+        System.out.println("두두등장");
+        Enemy enemy = new Enemy(100, 10, 8, 7);
+        enemy.showStat_enemy();
+    }
         
-    
 
     public static void manual(myCharacter ch) {
         int pick = 0;
+        int cnt = 0;
         boolean gameOn = true;
         while(gameOn) {
-            System.out.println("\nWhat do you want to do with your character!");
-            System.out.println("1. Training\t2. Show character stat\t3. Buy item\t4. Show enemy stat\t5. Exit");
-            pick = kbd.nextInt();
+            cnt++;
+            if (cnt % 4 == 0) {
+                enemyShow(ch);
+            } else {
+                System.out.println("\nWhat do you want to do with your character!");
+                System.out.println("1. Training\t2. Show character stat\t3. Buy item\t4. Show enemy stat\t5. Exit");
+                pick = kbd.nextInt();
 
-            switch(pick) {
-                case 1: System.out.println("test");//fight();
-                    break;
-                case 2: ch.showStat();
-                    break;
-                case 3: Item(ch);
-                    break;
-                case 4: System.out.println("test"); //showStat_enemy();
-                    break;
-                case 5: gameOn = false;
-                    break;
-                default: System.out.println("Wrong number! Please enter again with the number from 1 to 4 .");
+                switch(pick) {
+                    case 1: showTraining(ch);
+                        break;
+                    case 2: ch.showStat();
+                        break;
+                    case 3: Item(ch);
+                        break;
+                    case 4: System.out.println("test"); //showStat_enemy();
+                        break;
+                    case 5: gameOn = false;
+                        break;
+                    default: System.out.println("Wrong number! Please enter again with the number from 1 to 4 .");
+                }
             }
         }
     }

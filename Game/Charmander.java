@@ -17,8 +17,8 @@ public class Charmander extends myCharacter implements Training {
         int Atk_C = getAtk();
         Atk_C += 5;
         setAtk(Atk_C);
-        System.out.println("-----Learned \"" + getTech1() + "\"-----");
-        System.out.println("-Your attack skill is +5-");
+        System.out.println("\n-----Learned <<" + getTech1() + ">>-----");
+        System.out.println("-Your ATTACK skill is +5 !!!-\n");
     }
 
     @Override
@@ -26,8 +26,8 @@ public class Charmander extends myCharacter implements Training {
         int Def_C = getDef();
         Def_C += 5;
         setDef(Def_C);
-        System.out.println("-----Learned \"" + getTech2() + "\"-----");
-         System.out.println("-Your defence skill is +5-");
+        System.out.println("\n-----Learned <<" + getTech2() + ">>-----");
+         System.out.println("-Your DEFENCE skill is +5 !!!-\n");
     }
 
     @Override
@@ -35,7 +35,7 @@ public class Charmander extends myCharacter implements Training {
         int Spd_C = getSpd();
         Spd_C += 5;
         setSpd(Spd_C);
-        System.out.println("-----Learned \"" + getTech3() + "\"-----");
-        System.out.println("-Your speed skill is +5-");
+        System.out.println("\n-----Learned <<" + getTech3() + ">>-----");
+        System.out.println("-Your SPEED skill is +5 !!!-\n");
     }
 }

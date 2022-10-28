@@ -17,8 +17,8 @@ public class Squirtle extends myCharacter implements Training {
         int Atk_S = getAtk();
         Atk_S += 5;
         setAtk(Atk_S);
-        System.out.println("-----Learned \"" + getTech1() + "\"-----");
-        System.out.println("-Your attack skill is +5-");
+        System.out.println("\n-----Learned <<" + getTech1() + ">>-----");
+        System.out.println("-Your ATTACK skill is +5 !!!-\n");
     }
 
     @Override
@@ -26,8 +26,8 @@ public class Squirtle extends myCharacter implements Training {
         int Def_S = getDef();
         Def_S += 5;
         setDef(Def_S);
-        System.out.println("-----Learned \"" + getTech2() + "\"-----");
-        System.out.println("-Your defence skill is +5-");
+        System.out.println("\n-----Learned <<" + getTech2() + ">>-----");
+        System.out.println("-Your DEFENCE skill is +5 !!!-\n");
     }
 
     @Override
@@ -35,7 +35,7 @@ public class Squirtle extends myCharacter implements Training {
         int Spd_S = getSpd();
         Spd_S += 5;
         setSpd(Spd_S);
-        System.out.println("-----Learned \"" + getTech3() + "\"-----");
-        System.out.println("-Your speed skill is +5-");
+        System.out.println("\n-----Learned <<" + getTech3() + ">>-----");
+        System.out.println("-Your SPEED skill is +5 !!!-\n");
     }
 }

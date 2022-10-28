@@ -1,9 +1,9 @@
 public abstract class myCharacter implements Training {
-    int Hp;
-    int Atk;
-    int Def;
-    int Spd;
-    int Eur;
+    private int Hp;
+    private int Atk;
+    private int Def;
+    private int Spd;
+    private int Eur;
     private int Ra;
     private String Tech1;
     private String Tech2;
@@ -51,6 +51,14 @@ public abstract class myCharacter implements Training {
     }
     
 
+    public int getRA() {
+        return Eur;
+    }
+
+    public void setRA(int Ra) {
+        this.Ra = Ra;
+    }
+
     public String getTech1() {
         return Tech1;
     }
@@ -75,15 +83,6 @@ public abstract class myCharacter implements Training {
         this.Tech3 = Tech3;
     }
 
-    public int getRA() {
-        return Eur;
-    }
-
-    public void setRA(int Ra) {
-        this.Ra = Ra;
-    }
-    
-
     public void showStat() {
         System.out.println("--------------------");
         System.out.println("Hp : " + Hp);
@@ -91,6 +90,7 @@ public abstract class myCharacter implements Training {
         System.out.println("Defence : " + Def);
         System.out.println("Speed : " + Spd);
         System.out.println("Money : " + Eur);
+        System.out.println("Run Card : " + Ra);
         System.out.println("--------------------");
     }
 }
