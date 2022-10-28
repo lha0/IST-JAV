@@ -23,19 +23,40 @@ public class PlayGame {
         }
 
         return ch;
+    }
 
+    public static void showTraining(myCharacter ch){
+        System.out.println(" ================================================");
+        System.out.println("|   1." + ch.getTech1()+"   |   2."+ch.getTech2()+"   |   3."+ch.getTech3()+"   |");
+        System.out.println(" ================================================");
+        
+        int tech;
+        tech = kbd.nextInt();
+
+        if(tech == 1){
+            ch.Attack();
+        }
+        else if(tech == 2){
+            ch.Defence();
+        }
+        else if(tech == 3){
+            ch.Speed();
+        }
+        else{
+            System.out.printf("\"%d\" is Invalid technique number !\n", tech);
+        }
     }
 
     public static void manual(myCharacter ch) {
         int pick = 0;
-        
-        while(true) {
-            System.out.println("What do you want to do with your character!");
-            System.out.println("1. Training\t2. Show character stat\t3. Buy item\t4. Show enemy stat");
+        boolean gameOn = true;
+        while(gameOn) {
+            System.out.println("\nWhat do you want to do with your character!");
+            System.out.println("1. Training\t2. Show character stat\t3. Buy item\t4. Show enemy stat\t5. Exit");
             pick = kbd.nextInt();
 
             switch(pick) {
-                case 1: System.out.println("test");//fight();
+                case 1: showTraining(ch);
                     break;
                 case 2: ch.showStat();
                     break;
@@ -43,13 +64,15 @@ public class PlayGame {
                     break;
                 case 4: System.out.println("test"); //showStat_enemy();
                     break;
+                case 5: gameOn = false;
+                    break;
                 default: System.out.println("Wrong number! Please enter again with the number from 1 to 4 .");
             }
         }
     }
 
     public static void main(String[] args) {
-        System.out.println("Now start the game . . . !");
+        System.out.println("Now start the game . . . !\n");
         myCharacter ch = null;
 
         ch = chooseCharacter();
