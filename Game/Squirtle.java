@@ -6,6 +6,7 @@ public class Squirtle extends myCharacter implements Training {
         setSpd(Spd);
         setEur(Eur);
         setRA(Ra);
+        setLevel(1);
         setTech1("Tackle");
         setTech2("TailWhip");
         setTech3("WaterGun");

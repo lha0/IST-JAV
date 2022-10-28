@@ -6,6 +6,7 @@ public class Charmander extends myCharacter implements Training {
         setSpd(Spd);
         setEur(Eur);
         setRA(Ra);
+        setLevel(1);
         setTech1("Scratch");
         setTech2("Growl");
         setTech3("FlameThrower");

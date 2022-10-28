@@ -6,6 +6,7 @@ public class Bulbasaur extends myCharacter implements Training {
         setSpd(Spd);
         setEur(Eur);
         setRA(Ra);
+        setLevel(1);
         setTech1("LeechSeed");
         setTech2("VineWhip");
         setTech3("Tackle");

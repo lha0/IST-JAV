@@ -5,6 +5,7 @@ public abstract class myCharacter implements Training {
     private int Spd;
     private int Eur;
     private int Ra;
+    private int Level;
     private String Tech1;
     private String Tech2;
     private String Tech3;
@@ -16,7 +17,6 @@ public abstract class myCharacter implements Training {
     public void setHp(int Hp) {
         this.Hp = Hp;
     }
-
 
     public int getAtk() {
         return Atk;
@@ -59,6 +59,14 @@ public abstract class myCharacter implements Training {
         this.Ra = Ra;
     }
 
+    public int getLevel() {
+        return Level;
+    }
+
+    public void setLevel(int Level) {
+        this.Level = Level;
+    }
+
     public String getTech1() {
         return Tech1;
     }
@@ -91,6 +99,7 @@ public abstract class myCharacter implements Training {
         System.out.println("Speed : " + Spd);
         System.out.println("Money : " + Eur);
         System.out.println("Run Card : " + Ra);
+        System.out.println("Level: " + Level);
         System.out.println("--------------------");
     }
 }
