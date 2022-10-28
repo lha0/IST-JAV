@@ -82,11 +82,35 @@ public class PlayGame {
             }
         }        
     }
+    
+    public static void Fight(myCharacter ch, Enemy enemy) {
+        int total_stat_ch = ch.getAtk() + ch.getDef() + ch.getSpd();
+        int total_stat_enemy = enemy.getAtk() + enemy.getDef() + enemy.getSpd();
+        int HP = ch.getHp();
+        int Euro = ch.getEur();
 
-    public static void enemyShow(myCharacter ch) {
+        if (total_stat_ch > total_stat_enemy) {
+            System.out.println("지우가 승리했다!");
+            //ch.setHp(HP - enemy.getAtk());
+            ch.setEur(Euro + 30000000);
+            System.out.println("로켓단은 도망갔다");            
+        } else if (total_stat_ch < total_stat_enemy) {
+            System.out.println("로켓단이 승리했다!");
+            ch.setHp(HP - enemy.getAtk());
+            if(Euro >= 30000000) ch.setEur(Euro - 30000000);
+            else ch.setEur(0);
+            System.out.println("지우는 눈앞이 깜깜해졌다….");
+        }
+
+        enemy.setAtk(enemy.getAtk() + 3);
+        enemy.setDef(enemy.getDef() + 3);
+        enemy.setSpd(enemy.getSpd() + 3);
+    }
+
+    public static Enemy enemyShow(myCharacter ch, Enemy enemy) {
         int pick = 0;
         System.out.println("두두등장");
-        Enemy enemy = new Enemy(100, 10, 8, 7);
+        
         enemy.showStat_enemy();
 
         System.out.println("\nDo you want to Fight or Run?");
@@ -94,23 +118,26 @@ public class PlayGame {
         pick = kbd.nextInt();
 
         switch(pick) {
-            case 1: System.out.println("test");//Fight();
+            case 1: Fight(ch, enemy);
                 break;
             case 2: System.out.println("test");//Run();
                 break;
             default: System.out.println("Wrong number! Please enter again with the number from 1 to 2.");
         }
+
+        return enemy;
     }
         
 
-    public static void manual(myCharacter ch) {
+    public static void manual(myCharacter ch, Enemy enemy) {
         int pick = 0;
         int cnt = 0;
         boolean gameOn = true;
+
         while(gameOn) {
             cnt++;
             if (cnt % 4 == 0) {
-                enemyShow(ch);
+                enemyShow(ch, enemy);
             } else {
                 System.out.println("\nWhat do you want to do with your character!");
                 System.out.println("1. Training\t2. Show character stat\t3. Buy item\t4. Show enemy stat\t5. Exit");
@@ -123,7 +150,7 @@ public class PlayGame {
                         break;
                     case 3: Item(ch);
                         break;
-                    case 4: System.out.println("test"); //showStat_enemy();
+                    case 4: enemy.showStat_enemy();
                         break;
                     case 5: gameOn = false;
                         break;
@@ -138,7 +165,8 @@ public class PlayGame {
         myCharacter ch = null;
 
         ch = chooseCharacter();
+        Enemy enemy = new Enemy(100, 10, 8, 7);
 
-        manual(ch);
+        manual(ch, enemy);
     }
 }
