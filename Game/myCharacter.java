@@ -80,7 +80,6 @@ public abstract class myCharacter implements Training {
     public void setTech3(String Tech3) {
         this.Tech3 = Tech3;
     }
-    
 
     public void showStat() {
         System.out.println("--------------------");
