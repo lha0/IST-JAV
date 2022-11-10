@@ -1,54 +1,60 @@
 public class Enemy {
-    private int Hp_E;
-    private int Atk_E;
-    private int Def_E;
-    private int Spd_E;
+    private int enemyHp;
+    private int enemyAtk;
+    private int enemyDef;
+    private int enemySpd;
+
+    /*
+     * get; getting enemy stat
+     * set; updating enemy stat
+     */
 
     public int getHp() {
-        return Hp_E;
+        return enemyHp;
     }
 
-    public void setHp(int Hp_E) {
-        this.Hp_E = Hp_E;
+    public void setHp(int enemyHp) {
+        this.enemyHp = enemyHp;
     }
 
     public int getAtk() {
-        return Atk_E;
+        return enemyAtk;
     }
 
-    public void setAtk(int Atk_E) {
-        this.Atk_E = Atk_E;
+    public void setAtk(int enemyAtk) {
+        this.enemyAtk = enemyAtk;
     }
 
     public int getDef() {
-        return Def_E;
+        return enemyDef;
     }
 
-    public void setDef(int Def_E) {
-        this.Def_E = Def_E;
+    public void setDef(int enemyDef) {
+        this.enemyDef = enemyDef;
     }
 
     public int getSpd() {
-        return Spd_E;
+        return enemySpd;
     }
 
-    public void setSpd(int Spd_E) {
-        this.Spd_E = Spd_E;
+    public void setSpd(int enemySpd) {
+        this.enemySpd = enemySpd;
     }
 
-    public Enemy (int Hp_E, int Atk_E, int Def_E, int Spd_E) {
-        setHp(Hp_E);
-        setAtk(Atk_E);
-        setDef(Def_E);
-        setSpd(Spd_E);
+    //Enemy constructor
+    public Enemy(int enemyHp, int enemyAtk, int enemyDef, int enemySpd) {
+        setHp(enemyHp);
+        setAtk(enemyAtk);
+        setDef(enemyDef);
+        setSpd(enemySpd);
     }
 
-    public void showStat_enemy() {
-        System.out.println("--------------------");
+    public void showStatEnemy() {
+        System.out.println("\n==== Enemy Stat ====");
         System.out.println("Attack : " + getAtk());
         System.out.println("Defence : " + getDef());
         System.out.println("Speed : " + getSpd());
-        System.out.println("--------------------");
+        System.out.println("====================");
     }
     
 }
