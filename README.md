@@ -5,20 +5,25 @@ This project is writing a mini game in Java. The game we made is raising a chara
 
 ## Environment
 We used Java language.
-To compile the code, in game folder, write javac playGame.java.
-To run the class file, write java playGame.
+To compile the code, in game folder,
+  
+  javac playGame.java
+  
+To run the class file, 
 
-
+  java playGame
+  
+---------------------
 ## Files 
 There are 7 files in our project.
-Firstly, playGame.java file has main method and other methods for operating the game.
-Secondly, myCharater.java file is an abstract class for introducing charater's basic stats and technics. 
-Thirdly, Training.java file is an interface that contains 3 skills.
-Squirtle.java, Charmander.java and Bulbasaur.java files are classes that are inherited from myCharacter and Training. 
-These 3 files has basic stats and skills for each characters. Plus, these files has implemented functions in interface Training.
-Lastly, enemy.java file has stats for enemy.
+1. playGame.java file has main method and other methods for operating the game.
+2. myCharater.java file is an abstract class for introducing charater's basic stats and technics. 
+3. Training.java file is an interface that contains 3 skills.
+4. Squirtle.java, Charmander.java and Bulbasaur.java files are classes that are inherited from myCharacter and Training. 
+  These 3 files has basic stats and skills for each characters. Plus, these files has implemented functions in interface Training.
+5. enemy.java file has stats for enemy.
 
-
+---------------------
 ## Usage
 First, choose the character that the player wants.
 Then, player will have options for actions, such as Training, Show Character stat, ect.
