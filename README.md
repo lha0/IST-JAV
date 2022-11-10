@@ -1,4 +1,6 @@
-# JAVA project "My Pocketmon"
+# IST-4-JAV project "Mon Pokemon"
+### Jiun Gwak, Haneul Kim, Hayeong Lee
+
 ## Description
 This project is writing a mini game in Java. The game we made is raising a character, while encountering enemy and buying item, etc.
 
