@@ -6,19 +6,19 @@ This project is writing a mini game in Java. The game we made is raising a chara
 We used Java language.
 We used java.util package and Scanner class.
 You can find it at the beginning of playGame.java.
-'''
+``` 
 import java.util.Scanner;
-'''
+```   
 
 To compile the code, in game folder,
-'''
+```
 $ javac playGame.java
-'''
+```
 
 To run the class file, 
-'''
+```
 $ java playGame
-'''  
+```  
 
 ---------------------
 ## Files 
