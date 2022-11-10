@@ -1,6 +1,6 @@
 # IST-4-JAV project "Mon Pokemon"
 ### Jiun Gwak, Haneul Kim, Hayeong Lee
-
+---------------
 ## Description
 This project is writing a mini game in Java. The game we made is raising a character, while encountering enemy and buying item, etc.
 
@@ -12,7 +12,7 @@ You can find it at the beginning of playGame.java.
 import java.util.Scanner;
 ```   
 
-To compile the code, in game folder,
+To compile the code, in Game folder,
 ```
 $ javac playGame.java
 ```
